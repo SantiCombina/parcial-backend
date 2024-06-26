@@ -3,6 +3,7 @@ import express from "express";
 import clientesRoutes from "./routes/clientes.routes.js";
 import promotoresRoutes from "./routes/promotores.routes.js";
 import localidadesRoutes from "./routes/localidades.routes.js";
+import provinciasRoutes from "./routes/provincias.routes.js";
 
 import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
@@ -19,6 +20,7 @@ app.use(cors());
 app.use("/api", clientesRoutes);
 app.use("/api", promotoresRoutes);
 app.use("/api", localidadesRoutes);
+app.use("/api", provinciasRoutes);
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
 
 app.use((req, res, next) => {
