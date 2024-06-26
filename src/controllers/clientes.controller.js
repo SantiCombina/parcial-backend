@@ -29,10 +29,9 @@ export const getCliente = async (req, res) => {
 
 export const createCliente = async (req, res) => {
   const { nombre, domicilio, idLocalidad, idPromotor, saldo } = req.body;
-
   try {
     const [rows] = await pool.query(
-      "INSERT INTO Cliente(nombre, domicilio, idLocalidad, idPromotoy, Saldo) VALUES (?, ?, ?, ?, ?)",
+      "INSERT INTO Cliente(nombre, domicilio, idLocalidad, idPromotor, Saldo) VALUES (?, ?, ?, ?, ?)",
       [nombre, domicilio, idLocalidad, idPromotor, saldo]
     );
     res.send({
